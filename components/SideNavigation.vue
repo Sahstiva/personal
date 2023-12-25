@@ -1,50 +1,44 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <v-card color="rey-darken-2" class="navigation">
-    <v-list>
-      <v-list-item class="navigation-title">About me</v-list-item>
-      <v-list-item class="navigation-item" link to="/about"><v-icon icon="mdi-chevron-right"/>Biography</v-list-item>
-      <v-list-item class="navigation-item" link to="/about/experience"><v-icon icon="mdi-chevron-right"/>Experience</v-list-item>
-      <v-list-item class="navigation-item" link><v-icon icon="mdi-chevron-right"/>Education</v-list-item>
-      <v-list-group value="Skills">
-        <template v-slot:activator="{ props }">
-          <v-list-item
-              prepend-icon="mdi-chevron-right"
-              v-bind="props"
-              title="Skills"
-          ></v-list-item>
-        </template>
+  <v-card color="rey-darken-2" class="navigation" position="fixed">
+    <v-navigation-drawer expand-on-hover rail>
+      <v-list>
+        <v-list-item prepend-icon="mdi-face-man-shimmer-outline" class="navigation-title" title="About me"/>
+      </v-list>
+      <v-list density="compact" nav>
+        <v-list-item prepend-icon="mdi-history" class="navigation-item" link to="/about" title="Biography"/>
+        <v-list-item prepend-icon="mdi-account-hard-hat-outline" class="navigation-item" link to="/about/experience" title="Experience"/>
+        <v-list-item prepend-icon="mdi-school-outline" class="navigation-item" link title="Education"/>
+        <v-list-group value="Skills">
+          <template v-slot:activator="{ props }">
+            <v-list-item
+                prepend-icon="mdi-atom"
+                v-bind="props"
+                title="Skills"
+            ></v-list-item>
+          </template>
 
-        <v-list-item class="navigation-item" link><v-icon icon="mdi-chevron-right"/>Tech skills</v-list-item>
-        <v-list-item class="navigation-item" link><v-icon icon="mdi-chevron-right"/>Soft skills</v-list-item>
+          <v-list-item prepend-icon="mdi-code-json" class="navigation-item" link title="Tech skills"/>
+          <v-list-item prepend-icon="mdi-head-snowflake-outline" class="navigation-item" link title="Soft skills"/>
 
-      </v-list-group>
-      <v-list-item class="navigation-item" link><v-icon icon="mdi-chevron-right"/>Testimonials</v-list-item>
-      <v-list-item class="navigation-item" link><v-icon icon="mdi-chevron-right"/>Extra</v-list-item>
-    </v-list>
+        </v-list-group>
+        <v-list-item prepend-icon="mdi-human-male-board" class="navigation-item" link title="Testimonials"/>
+        <v-list-item prepend-icon="mdi-dots-horizontal-circle-outline" class="navigation-item" link title="Extra"/>
+      </v-list>
+    </v-navigation-drawer>
   </v-card>
 </template>
 
 <style scoped lang="scss">
 .navigation {
-  padding-top: 50px;
-  width: 250px;
-  height: 100vh;
-  align-self: flex-start;
   &-title {
-    margin: 20px 0 10px 0;
     font-family: 'Fira Code', monospace;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
   }
   &-item {
     font-family: 'Fira Code', monospace;
     font-size: 16px;
     font-weight: 400;
-    margin: 10px 0 10px 0
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+  import LoginWindow from "~/components/LoginWindow.vue";
 </script>
 
 <template>
@@ -7,6 +7,8 @@
     <v-btn class="navigation-button" variant="plain" active-class="main-button-selected" to="/">hello</v-btn>
     <v-btn class="navigation-button" variant="text" to="/about">about</v-btn>
     <v-btn class="navigation-button" variant="text" to="/projects">projects</v-btn>
+    <v-spacer></v-spacer>
+      <login-window />
   </v-app-bar>
 </template>
 
